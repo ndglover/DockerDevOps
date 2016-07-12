@@ -1,6 +1,12 @@
 # The deployment section should be excluded until
 # it is explicitly included in module 5
 
+#curl -H "Content-Type:application/json" --data '{"build":true}' -X POST "https://registry.hub.docker.com/u/tomac/dockerdevops/trigger/03cc1ae9-fa91-4ff2-9899-d9dc3cc24a47/"
+
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt-get install curl
+
 deployment:
  dockerhub:
    branch: master
